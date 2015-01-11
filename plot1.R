@@ -10,11 +10,9 @@ unlink(temp)
 
 ##### explore data #####
 head(data)
-summary(data$Date)
 
 ##### create workingset ######
-#convert date info in format 'dd/mm/yyyy'
-#convert date info to class 'date'
+#convert date info to class 'date' with  format 'dd/mm/yyyy'
 data[, 1] <- as.Date(data[,1], "%d/%m/%Y")
 class(data$Date)
 
