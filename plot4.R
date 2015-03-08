@@ -8,10 +8,10 @@ download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_p
 data <- read.table(unz(temp, "household_power_consumption.txt"), header = TRUE, sep = ";")
 unlink(temp)
 
-########explore data########
+##### explore data #####
 head(data)
 
-##########create workingset############
+##### create workingset #####
 #create new variable 'DateTime'
 data$DateTime <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 class(data$DateTime)
