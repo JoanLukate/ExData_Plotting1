@@ -8,11 +8,15 @@ download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_p
 data <- read.table(unz(temp, "household_power_consumption.txt"), header = TRUE, sep = ";")
 unlink(temp)
 
+temp <- data
+
 ##### explore data #####
 head(data)
+summary(data$Date)
 
 ##### create workingset ######
-#convert date info to class 'date' with  format 'dd/mm/yyyy'
+#convert date info in format 'dd/mm/yyyy'
+#convert date info to class 'date'
 data[, 1] <- as.Date(data[,1], "%d/%m/%Y")
 class(data$Date)
 
